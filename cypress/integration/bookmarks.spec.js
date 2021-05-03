@@ -3,9 +3,9 @@ describe('Bookmarks page', function(){
         cy.task('resetDb')
         cy.visit('/bookmarks')
     })
-    it('adding a bookmark', async function(){
+    it('adding a bookmark', function(){
         cy.get('#url-input').type('www.instagram.com')
-        cy.get('#submit-button').click()
+        cy.get('#save-button').click()
         cy.contains('www.instagram.com')
     })
 })

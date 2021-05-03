@@ -8,6 +8,11 @@
 </head>
 <body>
     <div>
+        <form action='/bookmarks' method='post'>
+            <input id='url-input'type='text' name='url'>
+            <input id='save-button' type='submit' value='Save'>
+        </form>
+
         <% bookmarks.forEach((bookmark, index)=>{%>
             <p><%= bookmark.url %></p>
         <%})%>
