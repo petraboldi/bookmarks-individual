@@ -14,4 +14,10 @@ router.post('/', async (req,res)=>{
     res.render('./bookmarks', {bookmarks: bookmarks})
 })
 
+router.delete('/:bookmarkId', async(req,res)=>{
+    let bookmarks = await Bookmarks.destroy({where:{id:req.params.bookmarkId}})
+    bookmarks = await Bookmarks.findAll()
+    res.render('./bookmarks', {bookmarks: bookmarks})
+})
+
 module.exports = router;

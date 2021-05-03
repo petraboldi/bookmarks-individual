@@ -12,6 +12,6 @@ describe('Bookmarks page', function(){
         cy.get('#url-input').type('www.instagram.com')
         cy.get('#save-button').click()
         cy.get('#delete-0').click()
-        cy.get('url-0').should('not.exist')
+        cy.get('#url-0').should('not.exist')
     })
 })
