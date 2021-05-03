@@ -1,6 +1,7 @@
 const express = require('express')
 const app = express()
 const port = 3000
+const methodOverride = require('method-override')
 
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
