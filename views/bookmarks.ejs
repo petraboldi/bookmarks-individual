@@ -16,7 +16,8 @@
         <% bookmarks.forEach((bookmark, index)=>{%>
             <form method='post' action='/bookmarks/<%=bookmark.id%>?_method=DELETE'>
             <span><p id='url-<%=index%>'><%= bookmark.url %></p>
-                <input id='delete-<%=index%>'type='submit' value='Delete'>
+                <a  id='edit-<%=index%>'href='/bookmarks/<%= bookmark.id %>/edit'>Edit</a>
+            <input id='delete-<%=index%>'type='submit' value='Delete'>
             </form>
             </span>
         <%})%>

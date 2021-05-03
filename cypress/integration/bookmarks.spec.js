@@ -17,7 +17,7 @@ describe('Bookmarks page', function(){
         it('updating a bookmark', function(){
         cy.get('#url-input').type('www.instagram.com')
         cy.get('#save-button').click()
-        cy.get('#update-0').click()
+        cy.get('#edit-0').click()
         cy.get('#url-input-update').type('www.facebook.com')
         cy.get('#update-button').click()
         cy.contains('www.facebook.com')
