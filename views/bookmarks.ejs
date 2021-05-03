@@ -5,22 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bookmarks</title>
+    <link rel="stylesheet" type="text/css" href="/app.css">
 </head>
 <body>
-    <div>
         <form action='/bookmarks' method='post'>
-            <input id='url-input'type='text' name='url'>
+            <input id='url-input'type='text' name='url' placeholder='Add url'>
+            <input id='comment-input' type='text' name='comment' placeholder='Add coment'>
             <input id='save-button' type='submit' value='Save'>
-        </form>
 
+        <div>
         <% bookmarks.forEach((bookmark, index)=>{%>
             <form method='post' action='/bookmarks/<%=bookmark.id%>?_method=DELETE'>
-            <span><p id='url-<%=index%>'><%= bookmark.url %></p>
+            <span><p id='url-<%=index%>'><%= bookmark.url %> Comment:  <%=bookmark.comment%></p>
+                <p id='comment-<%=index%>'></p>
                 <a  id='edit-<%=index%>'href='/bookmarks/<%= bookmark.id %>/edit'>Edit</a>
             <input id='delete-<%=index%>'type='submit' value='Delete'>
             </form>
             </span>
         <%})%>
-    </div>
+        </div>
 </body>
 </html>

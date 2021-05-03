@@ -14,9 +14,11 @@ router.get('/:bookmarkId/edit', async(req,res)=>{
 
 router.post('/', async (req,res)=>{
     let bookmarks = await Bookmarks.create({url: req.body.url})
+    bookmarks = await Bookmarks.create({comment: req.body.comment})
     bookmarks = await Bookmarks.findAll()
     res.render('./bookmarks', {bookmarks: bookmarks})
 })
+
 
 router.delete('/:bookmarkId', async(req,res)=>{
     let bookmarks = await Bookmarks.destroy({where:{id:req.params.bookmarkId}})

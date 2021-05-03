@@ -3,6 +3,7 @@ const app = express()
 const port = 3000
 const methodOverride = require('method-override')
 
+app.use(express.static("public"));
 app.use(express.urlencoded({extended:false}))
 app.use(methodOverride('_method'))
 app.set('view engine', 'ejs')

@@ -14,8 +14,17 @@ module.exports = (sequelize, DataTypes) => {
     }
   };
   Bookmarks.init({
-    url: DataTypes.STRING
-  }, {
+    url:{
+      type:DataTypes.STRING,
+      allowNull:true
+  },
+   comment: {
+     type:DataTypes.STRING,
+     allowNull:true
+
+},
+},
+   {
     sequelize,
     modelName: 'Bookmarks',
   });

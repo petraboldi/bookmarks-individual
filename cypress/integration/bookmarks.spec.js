@@ -25,7 +25,6 @@ describe('Bookmarks page', function(){
         it('adding comment to a bookmark', function(){
         cy.get('#url-input').type('www.instagram.com')
         cy.get('#save-button').click()
-        cy.get('#addComment-0').click()
         cy.get('#comment-input').type('This is my insta profile.')
         cy.get('#add-comment').click()
         cy.contains('This is my insta profile.')
